@@ -1,14 +1,50 @@
 * {
   box-sizing: border-box;
 }
+html {
+  height: 2000px;
+}
 h2,
 p {
   margin: 0;
 }
 body {
   min-height: 100vh;
-  background-color: var(--color-bg);
+  background-color: var(--color-black);
   font-size: 1.6rem;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.5;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Jockey One", sans-serif;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  padding: 0;
+  margin: 0;
+}
+h5 {
+  color: var(--color-grey);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  line-height: 1.8rem;
+  margin: 0 0 1rem 0;
+}
+h3.title1 {
+  font-size: 3rem;
+  color: var(--color-black);
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 500;
 }
