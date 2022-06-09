@@ -13,7 +13,7 @@ p {
 
 body {
   min-height: 100vh;
-  background-color: var(--color-black);
+  background-color: var(--color-white);
   font-size: 1.6rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.5;
@@ -56,6 +56,10 @@ h3.title1 {
   font-weight: 500;
 }
 
+section {
+  padding: 4rem 0;
+}
+
 :root {
   --color-white: hsl(0, 0%, 100%);
   --color-light-grey: hsl(0, 0%, 81%);
@@ -69,6 +73,17 @@ h3.title1 {
   font-size: 14px;
 }
 
+@keyframes change-bg {
+  0% {
+    background-image: url(../../images/bg2.jpg);
+  }
+  50% {
+    background-image: url(../../images/b1.jpg);
+  }
+  100% {
+    background-image: url(../../images/b3.jpg);
+  }
+}
 .header {
   position: relative;
   height: 794px;
@@ -76,6 +91,7 @@ h3.title1 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 52%;
+  animation: change-bg 10s infinite alternate;
 }
 .header .layer {
   background: url(../../images/dott.png) repeat 0px 0px;
@@ -137,6 +153,9 @@ h3.title1 {
   width: 10px;
   background: var(--color-green);
   transform: rotate(45deg);
+}
+.header .layer .dot-container .dot-item a.active::after {
+  background-color: #fff;
 }
 .header .nav {
   display: flex;
@@ -212,6 +231,7 @@ h3.title1 {
 
 #intro {
   background-color: var(--color-bg);
+  padding-bottom: 0;
 }
 #intro .intro-top {
   padding: 4rem 0 0;
@@ -354,7 +374,6 @@ h3.title1 {
   display: block;
   max-width: 100%;
   height: auto;
-  vertical-align: center;
 }
 #spec .spec-main {
   margin-top: 4rem;
@@ -405,6 +424,7 @@ h3.title1 {
 }
 
 #gallery {
+  background: white;
   padding: 4rem 0;
   width: 1170px;
   margin: auto;
@@ -425,11 +445,81 @@ h3.title1 {
   padding: 1rem 0;
 }
 
+#stat {
+  position: relative;
+  background: url(../images/g3.jpg) no-repeat;
+  background-size: cover;
+  background-position: 0 -60px;
+  padding: 0;
+}
+#stat .stat__layer {
+  background: url(../../images/dott.png) center;
+}
+#stat .stat__title {
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 2.8rem;
+  margin-top: 2rem;
+  line-height: 1.5;
+  color: #fbfbfb;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+#stat .stat__title span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: #b2ceae;
+  display: block;
+}
+#stat .stat__container {
+  width: 1170px;
+  padding: 4rem 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+#stat .stat__descri {
+  width: 25%;
+}
+#stat .stat__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 75%;
+}
+#stat .stat__grid__card {
+  background: rgba(0, 0, 0, 0.6588235294);
+  padding: 2rem;
+  text-align: center;
+}
+#stat .stat__grid__card i {
+  display: block;
+  font-size: 2.2rem;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #ffffff;
+}
+#stat .stat__grid__card h6 {
+  letter-spacing: 1px;
+  margin: 0;
+  font-size: 1.7rem;
+  margin-top: 15px;
+  color: #357f2a;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+#stat .stat__grid__card p {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #c1c1c1;
+}
+
 #plan {
   background-color: var(--color-bg);
   padding: 4rem 6.2142857143rem;
 }
 #plan .plan__row {
+  width: 1170px;
+  margin: auto;
   display: flex;
   margin-top: 4rem;
   justify-content: center;
@@ -439,7 +529,6 @@ h3.title1 {
   border-width: 0 1px;
 }
 #plan .plan__card {
-  height: 500px;
   text-align: center;
 }
 #plan .plan__card .price-list {
@@ -498,6 +587,224 @@ h3.title1 {
 }
 #plan h3.title1 {
   color: var(--color-white);
+}
+
+#customer {
+  background: white;
+}
+#customer .dot-control {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+#customer .dot-control__item {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 5px 7px;
+  filter: Alpha(Opacity=50);
+  opacity: 0.5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #357f2a;
+}
+#customer .dot-control__item:hover, #customer .dot-control__item.active {
+  opacity: 1;
+}
+#customer .customer__container {
+  width: 1170px;
+  padding: 0 15px;
+  margin: auto;
+  display: flex;
+}
+#customer .customer__container__item {
+  margin: 1rem;
+}
+#customer .customer__container__item__feedback {
+  position: relative;
+  padding: 2rem;
+  background: #000;
+  border-radius: 5px;
+  box-shadow: 5px 2px 3px #39832e;
+}
+#customer .customer__container__item__feedback::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 27%;
+  width: 0;
+  height: 0;
+  border-top: 9px solid #000;
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
+}
+#customer .customer__container__item__feedback p {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  color: #fff;
+}
+#customer .customer__container__item__tag {
+  margin: 2rem auto 0;
+  width: 55%;
+}
+#customer .customer__container__item__info {
+  float: right;
+  width: 65%;
+}
+#customer .customer__container__item__info h5 {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin: 0;
+  text-transform: capitalize;
+}
+#customer .customer__container__item__info p {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  margin: 0;
+  color: #777;
+}
+#customer .customer__container__item__icon {
+  float: left;
+  width: 42px;
+  height: 42px;
+  background: #357f2a;
+  transform: rotate(46deg);
+}
+#customer .customer__container__item__icon i {
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  text-align: center;
+  transform: rotate(-46deg);
+}
+
+#instructor {
+  position: relative;
+  text-align: center;
+  background: url(../../images/1.jpg) no-repeat right;
+  background-size: contain;
+  padding: 0;
+}
+#instructor .layer-black {
+  position: absolute;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+#instructor .layer {
+  position: relative;
+  z-index: 2;
+  background: rgba(76, 181, 60, 0.7);
+}
+#instructor .layer .card-container {
+  position: relative;
+  width: 949px;
+  margin: auto;
+  padding-bottom: 5rem;
+  display: flex;
+}
+#instructor .layer .card-container .dot-control {
+  display: flex;
+  position: absolute;
+  left: 47%;
+  bottom: 16%;
+  list-style: none;
+  margin: 0;
+}
+#instructor .layer .card-container .dot-control li {
+  margin: 0 9px;
+  display: inline-block;
+}
+#instructor .layer .card-container .dot-control li a {
+  width: 13px;
+  height: 13px;
+  display: block;
+  border: 2px solid #4cb53c;
+  cursor: pointer;
+  text-indent: -9999px;
+  transform: rotate(45deg);
+}
+#instructor .layer .card-container .dot-control li a.active {
+  background: #4cb53c;
+}
+#instructor .layer .card-container .card-item {
+  width: 50%;
+  padding: 0 15px;
+}
+#instructor .layer .card-container .card-item p {
+  font-size: 1rem;
+  color: #fff;
+  margin: 1rem auto 1.5rem;
+  width: 70%;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+#instructor .layer .card-container .card-item h5 {
+  font-size: 1.5rem;
+  margin: 0;
+  margin-top: 1rem;
+  color: #000000;
+  font-weight: 500;
+  line-height: 1.8rem;
+}
+#instructor .layer .card-container .card-item h5 span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.8em;
+  margin-left: 0.5em;
+}
+#instructor .layer .card-container .card-item ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+#instructor .layer .card-container .card-item ul li {
+  display: inline-block;
+  margin-left: 1.2rem;
+}
+#instructor .layer .card-container .card-item ul a {
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.4rem 0;
+  width: 32px;
+  height: 32px;
+  transform: rotate(46deg);
+  transition: 0.5s all;
+}
+#instructor .layer .card-container .card-item ul a i {
+  transform: rotate(-46deg);
+}
+#instructor .layer .card-container .card-item ul a.facebook {
+  background: #3b5998;
+}
+#instructor .layer .card-container .card-item ul a.twitter {
+  background: #1da1f2;
+}
+#instructor .layer .card-container .card-item ul a.dribble {
+  background: #ea4c89;
+}
+#instructor .layer .card-container .card-item ul a.vimeo {
+  background: #1ab7ea;
+}
+#instructor .title {
+  padding: 1em 0 2em;
+  font-size: 2.5rem;
+  color: #000;
+  text-transform: capitalize;
+  font-weight: 500;
 }
 
 .footer {
