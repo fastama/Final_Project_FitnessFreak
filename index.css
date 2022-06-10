@@ -31,6 +31,7 @@ h6 {
 }
 
 ul {
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -58,6 +59,14 @@ h3.title1 {
 
 section {
   padding: 4rem 0;
+}
+
+.clearfix {
+  clear: both;
+}
+
+a {
+  text-decoration: none;
 }
 
 :root {
@@ -518,7 +527,7 @@ section {
   padding: 4rem 6.2142857143rem;
 }
 #plan .plan__row {
-  width: 1170px;
+  width: 100%;
   margin: auto;
   display: flex;
   margin-top: 4rem;
@@ -807,9 +816,240 @@ section {
   font-weight: 500;
 }
 
-.footer {
-  margin: 2.1428571429rem;
+#blog .blog__container {
+  width: 1170px;
+  margin: auto;
+  padding: 0 15px;
+}
+#blog .blog__container .blog__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 42px;
+  grid-column-gap: 30px;
+  margin-top: 4rem;
+}
+#blog .blog__container .blog__grid__item {
+  padding: 2rem 1.1rem 1rem;
+  border: 1px solid #e4e4e4;
+}
+#blog .blog__container .blog__grid__item img {
+  float: left;
+  width: 13%;
+  padding-right: 10px;
+}
+#blog .blog__container .blog__grid__item__content {
+  float: right;
+  width: 85%;
+}
+#blog .blog__container .blog__grid__item__content h5 {
+  font-size: 1.5rem;
+  color: #333;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+#blog .blog__container .blog__grid__item__content ul {
+  list-style: none;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+#blog .blog__container .blog__grid__item__content ul li {
+  list-style: none;
+  display: inline-block;
+  color: #777;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+#blog .blog__container .blog__grid__item__content p {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  color: #777;
+}
+#blog .blog__container .blog__grid__item__content .button {
+  margin: 1rem 0;
+  display: inline-block;
+  background: #357f2a;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+#contact {
+  background-color: #000;
+}
+#contact .contact-pos {
+  position: absolute;
+  right: 14%;
+  width: 27%;
+  bottom: 27%;
+  background-color: #fff;
+  border: 4px solid rgba(53, 127, 42, 0.6);
+  border-width: 4px;
+}
+#contact .contact-pos__item {
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+}
+#contact .contact-pos__item ul li {
+  color: #777;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+#contact .contact-pos__item ul li a {
+  text-decoration: none;
+  color: #777;
+}
+#contact .contact-pos__item span.field-icon {
+  float: left;
   text-align: center;
+  font-size: 1.7rem;
+  height: 40px;
+  line-height: 1.2;
+  width: 40px;
+  background: transparent;
+  color: #357f2a;
+  margin: 1em 2em 1em 1em;
+}
+#contact .title1 {
+  color: #fff;
+}
+#contact .contact {
+  position: relative;
+}
+#contact .contact__map {
+  width: 100%;
+  padding: 0 15px;
+  margin: auto;
+}
+#contact .contact__map iframe {
+  width: 100%;
+  min-height: 400px;
+  margin-top: 4rem;
+}
+#contact .contact .form-container {
+  width: 1170px;
+  padding: 0 15px;
+  margin: auto;
+}
+#contact .contact .form-container form {
+  padding: 4rem 0 0;
+}
+#contact .contact .form-container form .contact-left-form {
+  width: 50%;
+}
+#contact .contact .form-container form .contact-left-form .field-input:nth-child(2) {
+  margin: 1rem 0;
+}
+#contact .contact .form-container form .contact-left-form .field-input i.field-icon {
+  font-size: 1.5rem;
+  float: left;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  width: 69px;
+  height: 46px;
+  background: #357f2a;
+}
+#contact .contact .form-container form .contact-left-form .field-input input {
+  width: 78%;
+  float: left;
+  outline: none;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #fff;
+  color: #000;
+  letter-spacing: 1px;
+}
+#contact .contact .form-container form textarea {
+  display: inline-block;
+  background: #fff;
+  border: solid 1px #ffb500;
+  width: 100%;
+  outline: none;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #000;
+  margin: 1rem 0;
+  min-height: 198px;
+  letter-spacing: 1px;
+}
+#contact .contact .form-container form .btn1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  padding: 0.6rem 3rem;
+  border: solid 2px #357f2a;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  display: block;
+  transition: 0.5s all;
+}
+#contact .contact .form-container form .btn1:hover {
+  background: #357f2a;
+  color: #fff;
+}
+
+#footer {
+  padding: 0;
+  text-align: center;
+}
+#footer ul.social-container {
+  width: 100%;
+  display: flex;
+}
+#footer ul.social-container li {
+  padding: 2rem;
+  width: 25%;
+}
+#footer ul.social-container li:nth-child(1) {
+  background-color: #3b5998;
+}
+#footer ul.social-container li:nth-child(2) {
+  background-color: #1da1f2;
+}
+#footer ul.social-container li:nth-child(3) {
+  background-color: #cc181e;
+}
+#footer ul.social-container li:nth-child(4) {
+  background-color: rgba(76, 181, 60, 0.7);
+}
+#footer ul.social-container li a span {
+  color: #fff;
+  line-height: 1;
+  font-size: 4rem;
+}
+#footer ul.social-container li a h6 {
+  color: #fff;
+  font-weight: 100;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  margin: 1rem 0 0;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+#footer .footer-bottom {
+  background-color: #0e0e0e;
+  padding: 1rem 0;
+}
+#footer .footer-bottom p {
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+#footer .footer-bottom p a {
+  color: white;
 }
 
 .author {
